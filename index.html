@@ -20,6 +20,7 @@
   </head>
   <body>
     <!-- Шапка -->
+
     <header>
       <div class="container header-nav">
         <nav class="header-nav">
@@ -60,8 +61,21 @@
       <!-- Секція ГЕРОЙ -->
       <section class="hero hero-overlay">
         <h1 class="hero-title">Ефективні рішення для вашого бізнесу</h1>
-        <button type="button" class="button primary">Замовити послугу</button>
+        <button type="button" class="button primary" data-modal-open>
+          Замовити послугу
+        </button>
       </section>
+
+      <!-- МОДАЛЬНЕ вікно -->
+      <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+          <button class="modal-btn" type="button" data-modal-close>
+            <svg class="modal-btn-close" width="18" height="18">
+              <use href="./images/icons.svg#close"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
 
       <!-- Секція ОСОБЛИВОСТІ -->
       <section class="section">
@@ -431,5 +445,7 @@
         </div>
       </div>
     </footer>
+
+    <script src="./js/modal.js"></script>
   </body>
 </html>
