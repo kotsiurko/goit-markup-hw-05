@@ -54,12 +54,12 @@ img {
   letter-spacing: 0.03em;
   text-decoration: none;
   margin-right: 93px;
+  transition: color var(--animation);
 }
 
 .logo:hover,
 .logo:focus {
   color: var(--accent-color);
-  transition: color var(--animation);
 }
 
 span {
@@ -71,7 +71,8 @@ header {
   border-bottom: 1px solid #ececec;
 }
 
-.header-nav {
+.header-nav,
+.header-container {
   display: flex;
   align-items: center;
 }
@@ -94,6 +95,7 @@ header {
   line-height: 1.14;
   letter-spacing: 0.02em;
   text-decoration: none;
+  transition: color var(--animation);
 }
 
 .site-nav .link.current {
@@ -103,7 +105,6 @@ header {
 .site-nav .link:hover,
 .site-nav .link:focus {
   color: var(--accent-color);
-  transition: color var(--animation);
 }
 
 .header-nav .link {
@@ -129,16 +130,17 @@ header {
 }
 
 .site-contacts a {
+  display: flex;
   color: var(--text-color-primary);
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
   text-decoration: none;
+  transition: color var(--animation);
 }
 
 .site-contacts a:hover {
   color: var(--accent-color);
-  transition: color var(--animation);
 }
 
 .site-contacts .icon {
@@ -146,10 +148,6 @@ header {
   width: 16px;
   margin-right: 10px;
   fill: currentColor;
-}
-
-.site-contacts .link {
-  display: flex;
 }
 
 /* ----------------- SECTIONS ------------------- */
@@ -420,6 +418,8 @@ header {
   cursor: pointer;
   border: transparent;
   border-radius: 4px;
+  transition: color var(--animation), background-color var(--animation),
+    box-shadow var(--animation);
 }
 
 .button.filter {
@@ -445,8 +445,6 @@ header {
   background-color: var(--accent-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
-  transition: color var(--animation), background-color var(--animation),
-    box-shadow var(--animation);
 }
 
 /* ----------------- PORTFOLIO PAGE ------------------- */
@@ -488,6 +486,7 @@ header {
 .portfolio-link {
   display: block;
   text-decoration: none;
+  transition: box-shadow var(--animation);
 }
 
 .portfolio-link .title {
@@ -508,7 +507,6 @@ header {
 .portfolio-link:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
-  transition: box-shadow var(--animation);
 }
 
 .portfolio-thumb-image {
@@ -519,7 +517,6 @@ header {
 .portfolio-link:hover .overlay,
 .portfolio-link:focus .overlay {
   transform: translateY(0);
-  transition: transform var(--animation);
 }
 
 .overlay {
@@ -537,7 +534,7 @@ header {
   color: var(--white);
   padding: 63px 24px;
   transform: translateY(100%);
-  /* transition: transform var(--animation); */
+  transition: transform var(--animation);
 }
 
 .overlay > p {
@@ -566,16 +563,21 @@ header {
   color: #afb1b8;
   border: 1px solid #afb1b8;
   border-radius: 4px;
-}
-
-.client-link:hover {
-  border: 1px solid var(--accent-color);
   transition: border var(--animation);
 }
 
-.client-link:hover .client-icon {
-  fill: var(--accent-color);
+.client-link:hover,
+.client-link:focus {
+  border: 1px solid var(--accent-color);
+}
+
+.client-link .client-icon {
   transition: fill var(--animation);
+}
+
+.client-link:hover .client-icon,
+.client-link:focus .client-icon {
+  fill: var(--accent-color);
 }
 
 /* ----------------- FOOTER ------------------- */
@@ -610,10 +612,13 @@ footer .container {
   align-items: baseline;
 }
 
+.footer-contacts .link {
+  transition: color var(--animation);
+}
+
 .footer-contacts .link:hover,
 .footer-contacts .link:focus {
   color: var(--accent-color);
-  transition: color var(--animation);
 }
 
 address {
@@ -649,21 +654,19 @@ address li:last-of-type {
 }
 
 .social-icon {
-  background-color: var(--bg-color-primary);
-  border-radius: 50%;
-  height: 44px;
-  width: 44px;
-
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  height: 44px;
+  width: 44px;
+  transition: background-color var(--animation), color var(--animation);
 }
 
-.social-icon:hover {
+.social-icon:hover,
+.social-icon:focus {
   background-color: var(--accent-color);
   color: var(--bg-color-primary);
-  transition: background-color var(--animation), color var(--animation);
 }
 
 .icon-img {
@@ -678,7 +681,15 @@ address li:last-of-type {
   fill: #afb1b8;
 }
 
-.social-icon:hover .icon-img {
+.social-icon:hover .icon-img,
+.social-icon:focus .icon-img {
   fill: var(--white-color);
+}
+
+.social-icon .icon-img {
   transition: fill var(--animation);
+}
+
+.social-icon-link {
+  background-color: rgba(255, 255, 255, 0.1);
 }
